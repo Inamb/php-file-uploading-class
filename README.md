@@ -1,24 +1,54 @@
-# php-file-uploading-class
-validate and upload files more easily using php
-All you need to do is include this class or autoload it in your files.
-then add below code in your form handling code.
+# PHP File Uploading Class
+
+validate and upload files on server more easily using PHP.
+
+## Getting Started
+
+All you need to get started with this class is, include or autoload this class in you project or file
+
+## Simple uploading
+
+we can start using this class using this simple code.
 
 ```
-$a = new Upload("input_field_name","upload_dir_name/");
+$a = new Upload("input_field_name","directory_to_upload/");
+$a->do_upload();
+```
 
-if ($a->do_upload()) {
-  
-  // store in database or do whatever you want to do.
-  
-  $file_name = $a->file_name();
-  
-  $file_url = $a->file_url();
+## Maximum file size validation
 
+we can add maximum file size(Megabytes) parameter in order to validate file size. [ default=5MB ]
+
+```
+$a = new Upload("input_field_name","directory_to_upload/",10);
+```
+
+and repeat
+
+```
+$a->do_upload();
+```
+
+## File extension validation 
+
+we can pass an array of allowed extensions to validate file extension. [ default = ["jpg","png","gif"] ]
+
+```
+$a = new Upload("input_field_name","directory_to_upload/",10,["png","jpg"]);
+```
+## Checking for errors and warnings
+
+we can use `errors()` method to get array of errors and warnings.
+Remember `do_upload()` will return false if there will be any error or warning. 
+
+```
+$a = new Upload("input_field_name","directory_to_upload/",10,["png","jpg"]);
+  if($a->do_upload()){
 }else{
- 
- //errors detected
- 
- die(var_dump($a->errors()));
-
+  var_dump($a->errors());
 }
 ```
+
+## Authors
+
+* **inambe** - *Initial work* - [inambe](https://facebook.com/inambe.io)
