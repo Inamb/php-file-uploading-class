@@ -43,7 +43,8 @@ Remember `do_upload()` will return false if there will be any error or warning.
 
 ```
 $a = new Upload("input_field_name","directory_to_upload/",10,["png","jpg"]);
-  if($a->do_upload()){
+if($a->do_upload()){
+  // file is uploaded do whatever you want to do
 }else{
   var_dump($a->errors());
 }
