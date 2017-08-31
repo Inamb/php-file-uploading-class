@@ -54,5 +54,5 @@ if($a->do_upload()){
 
 ## Authors
 
-* **inambe** - *Developer* - [Inambe](https://facebook.com/inambe.io)
-* **kamaltech** *Created for* [Kamaltech](https://www.kamaltech.io)
+* **Inambe** - *Developer* - [Inambe](https://facebook.com/inambe.io)
+* **kamaltech** *Created for* [Kamaltech](http://kamaltech.io)
